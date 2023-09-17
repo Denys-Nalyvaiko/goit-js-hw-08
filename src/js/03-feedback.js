@@ -17,7 +17,8 @@ function handleFormInput(event) {
 function handleFormSubmit(event) {
   event.preventDefault();
 
-  if (!localStorage.getItem(LS_FORM_STATE)) {
+  if (!formRef.elements.email.value || !formRef.elements.message.value) {
+    alert('Not today bro 🥲');
     return;
   }
 
