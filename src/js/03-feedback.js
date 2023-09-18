@@ -1,10 +1,11 @@
+import throttle from 'lodash.throttle';
+
 const formRef = document.querySelector('.feedback-form');
-const submitBtnRef = document.querySelector('.feedback-form button');
 const LS_FORM_STATE = 'feedback-form-state';
 let formData = {};
 
 populateForm();
-formRef.addEventListener('input', handleFormInput);
+formRef.addEventListener('input', throttle(handleFormInput, 500));
 formRef.addEventListener('submit', handleFormSubmit);
 
 function handleFormInput(event) {
@@ -19,6 +20,7 @@ function handleFormSubmit(event) {
 
   if (!formRef.elements.email.value || !formRef.elements.message.value) {
     alert('Not today bro 🥲');
+    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
     return;
   }
 
