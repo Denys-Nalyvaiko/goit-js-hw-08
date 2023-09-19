@@ -20,14 +20,15 @@ function handleFormSubmit(event) {
 
   if (!formRef.elements.email.value || !formRef.elements.message.value) {
     alert('Not today bro 🥲');
-    window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+    open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
     return;
   }
 
   console.log(formData);
 
   localStorage.removeItem(LS_FORM_STATE);
-  event.currentTarget.reset();
+  formRef.reset();
+  formData = {};
 }
 
 function populateForm() {
